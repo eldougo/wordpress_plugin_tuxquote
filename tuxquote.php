@@ -48,9 +48,9 @@ function tuxquote_choose_quote() {
  * Chose and format a random image.
  */
 function tuxquote_choose_image() {
-	$image_url = plugins_url( 'images/', __FILE__ );
-	$image_dir = plugin_dir_path( __FILE__ ).'images/';
-	$image_array    = array_filter( scandir( $image_dir ), 'tuxquote_is_image' );
+	$image_url   = plugins_url( 'images/', __FILE__ );
+	$image_dir   = plugin_dir_path( __FILE__ ).'images/';
+	$image_array = array_filter( scandir( $image_dir ), 'tuxquote_is_image' );
 	return $image_url.$image_array[ array_rand($image_array,1) ];
 }
 
