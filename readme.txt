@@ -18,7 +18,11 @@ You can add or remove images from wp-content/plugins/tuxquote/images/ directory.
 
 Add or remove quotes from the wp-content/plugins/tuxquote/quotes.txt file. Quotes are line delimited and HTML formatting can be used, enabling you to use <br /> for line breaks etc.
 
-Development for this plugin can now be found on GitHub: https://github.com/eldougo/wordpress_plugin_tuxquote
+Development for this plugin can be found on GitHub: https://github.com/eldougo/wordpress_plugin_tuxquote
+
+The supplied images were sourced fromm CrystalXP.net (http://www.crystalxp.net/) and are all distributed under the Creative Commons BY-NC-SA license (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+
+Please see images-readme.txt for image licensing information and image attributions.
 
 == Installation ==
 
