@@ -12,7 +12,7 @@ Show a random image of Tux the Linux penguin with a random quote.
 
 == Description ==
 
-Tuxquote show a random image of Tux the Linux penguin with a random quote using the '[TUXQUOTE]' shortcode.
+Tuxquote shows a random image of Tux the Linux penguin with a random quote using the '[TUXQUOTE]' shortcode.
 
 You can add or remove images from wp-content/plugins/tuxquote/images/ directory. All jpg, png and gif images will be randomly used from that directory.
 
@@ -22,7 +22,7 @@ Development for this plugin can be found on GitHub: https://github.com/eldougo/w
 
 The supplied images were sourced fromm CrystalXP.net (http://www.crystalxp.net/) and are all distributed under the Creative Commons BY-NC-SA license (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 
-Please see images-readme.txt for image licensing information and image attributions.
+Please see images-license.txt for image licensing information and image attributions.
 
 == Installation ==
 
