@@ -3,8 +3,8 @@ Contributors: eldougo
 Donate link: 
 Tags: quote, tux
 Requires at least: 3.0.1
-Tested up to: 3.8.1
-Stable tag: 0.1
+Tested up to: 4.0
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Show a random image of Tux the Linux penguin with a random quote.
 
 == Description ==
 
-Tuxquote shows a random image of Tux the Linux penguin with a random quote using the '[TUXQUOTE]' shortcode.
+Tuxquote shows a random image of Tux the Linux penguin with a random quote either as a widget or shortcode.
 
 You can add or remove images from wp-content/plugins/tuxquote/images/ directory. All jpg, png and gif images will be randomly used from that directory.
 
@@ -20,15 +20,37 @@ Add or remove quotes from the wp-content/plugins/tuxquote/quotes.txt file. Quote
 
 Development for this plugin can be found on GitHub: https://github.com/eldougo/wordpress_plugin_tuxquote
 
-The supplied images were sourced fromm CrystalXP.net (http://www.crystalxp.net/) and are all distributed under the Creative Commons BY-NC-SA license (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+The supplied images were sourced from CrystalXP.net (http://www.crystalxp.net/) and are all distributed under the Creative Commons BY-NC-SA license (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 
 Please see images-license.txt for image licensing information and image attributions.
 
+= Shortcode usage =
+
+Default usage:
+
+[TUXQUOTE]
+
+Set the width to 200 pixels:
+
+[TUXQUOTE width="200px"]
+
+Set the width to 80% of the container element and add a title:
+
+[TUXQUOTE width="80%" title="Thought of the day"]
+
 == Installation ==
 
-Upload the Tuxquote plugin to your blog, activate it, then enter the shortcode '[TUXQUOITE]' in your page or post.
+1. Upload the Tuxquote plugin to your blog, activate it, then either enter the shortcode '[TUXQUOTE]' in your page or post and/or drag the Tuxquote Widget to a widgitized area on your Widgets page.
 
 == Frequently Asked Questions ==
+
+= The images are distributed under the Creative Commons BY-NC-SA license, what does this mean? =
+
+This means that you can't use the supplied images for any commercial purposes.
+
+= How do I get around this? =
+
+No problem, either remove all the images from the plugin images directory and replace them with your own, or get written permission from the image authors who are listed in the images-license.txt file. The Tuxquote plugin code is distributed under the GPL v2 license.
 
 == Screenshots ==
 
@@ -37,7 +59,28 @@ Upload the Tuxquote plugin to your blog, activate it, then enter the shortcode '
 
 == Changelog ==
 
-= 0.1 =
+= 1.2 =
+
+* Replaced some deprecated HTML styling tags.
+* Widgetized the plugin.
+* Added width and title options.
+
+= 1.1 =
+Corrected some small typos in the readme file.
+
+= 1.0 =
 Initial.
 
+== Upgrade Notice ==
+
+= 1.2 =
+* Replaced some deprecated HTML styling tags.
+* Widgetized the plugin.
+* Added width and title options.
+
+= 1.1 =
+Corrected some small typos in the readme file.
+
+= 1.0 =
+Initial release.
 
