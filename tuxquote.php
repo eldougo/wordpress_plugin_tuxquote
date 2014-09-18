@@ -27,6 +27,7 @@ defined('ABSPATH') or die("No script kiddies please!");
 add_shortcode( 'TUXQUOTE', 'tuxquote_main' );
 
 define('TUXQUOTE_DEFAULT_WIDTH', '256px'); // Default div width for shortcode print.
+define('TUXQUOTE_DEFAULT_ALIGN', 'right'); // Default div alignment.
 
 /**
  * Callback used to determine if the passed file is an image.
@@ -57,20 +58,27 @@ function tuxquote_choose_image() {
 
 /**
  * Build and format HTML output.
+ *
+ * @param   string  $div_width   Div width in pixels or percentage [NN%|NNpx].
+ * @param   string  $align       Div float alignment [none|left|right].
+ * @param   string  $title       Div title, optional.
  */
- function tuxquote_build_format( $div_width, $title = '' ) {
+ function tuxquote_build_format( $div_width, $align, $title = '' ) {
 	if ( empty( $div_width ) ) {
 		$div_width = TUXQUOTE_DEFAULT_WIDTH;
 	}
 	if ( is_numeric( $div_width ) ) {
 		$div_width = trim( $div_width ) . "%";
 	}
+    if ( empty( $align ) ) {
+	$align = TUXQUOTE_DEFAULT_ALIGN;
+    }
 	if ( ! empty( $title ) ) {
-		 $title_line = "  <p style='text-align: center; font-weight: 900'>".$title."</p>\n";
+		 $title_line = "  <p style='text-align: center; font-weight: 900'>" . $title . "</p>\n";
 	} else {
 		$title_line = '';
 	}
-	return  "\n<div style='float: right; width: ".$div_width."; '>\n"
+	return  "\n<div style='float: " . $align . "; width: " . $div_width . "; '>\n"
 			.$title_line
 			."  <img style='width:100%' src='".tuxquote_choose_image()."'><br />\n"
 			."  <p style='text-align: center'>".tuxquote_choose_quote()."</p>\n"
@@ -81,8 +89,10 @@ function tuxquote_choose_image() {
  * Return HTML encoded random image and quote.
  */
 function tuxquote_main( $atts ) {
-	$a = shortcode_atts( array( 'width' => TUXQUOTE_DEFAULT_WIDTH, 'title' => ''  ), $atts );
-	return  tuxquote_build_format( $a['width'],  $a['title'] );
+	$a = shortcode_atts( array( 'width' => TUXQUOTE_DEFAULT_WIDTH,
+	                            'align' => TUXQUOTE_DEFAULT_ALIGN,
+	                            'title' => ''  ), $atts );
+	return  tuxquote_build_format( $a['width'], $a['align'], $a['title'] );
 }
 
 /**
@@ -120,7 +130,10 @@ class Tuxquote_Widget extends WP_Widget {
 		if ( empty( $instance['width'] ) ) {
 			$instance['width'] = self::DEFAULT_WIDTH;
 		}
-		echo tuxquote_build_format( $instance['width'] );
+	if ( empty( $instance['align'] ) ) {
+		$instance['align'] = TUXQUOTE_DEFAULT_ALIGN;
+	}
+		echo tuxquote_build_format( $instance['width'], $instance['align'], '' );
 		echo $args['after_widget'];
 	}
 
@@ -146,12 +159,21 @@ class Tuxquote_Widget extends WP_Widget {
 			$width = self::DEFAULT_WIDTH;
 		}
 
+	if ( isset( $instance[ 'align' ] ) ) {
+		$align = $instance[ 'align' ];
+	}
+	else {
+		$align = TUXQUOTE_DEFAULT_ALIGN;
+	}
+
 		?>
 		<p>
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		<label for="<?php echo $this->get_field_id( 'width' ); ?>"><?php _e( 'Width:' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'width' ); ?>" name="<?php echo $this->get_field_name( 'width' ); ?>" type="text" value="<?php echo esc_attr( $width ); ?>">
+		<label for="<?php echo $this->get_field_id( 'align' ); ?>"><?php _e( 'Alignment:' ); ?></label>
+		<input class="widefat" id="<?php echo $this->get_field_id( 'align' ); ?>" name="<?php echo $this->get_field_name( 'align' ); ?>" type="text" value="<?php echo esc_attr( $align ); ?>">
 		</p>
 		<?php
 	}
@@ -170,6 +192,7 @@ class Tuxquote_Widget extends WP_Widget {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		$instance['width'] = ( ! empty( $new_instance['width'] ) ) ? strip_tags( $new_instance['width'] ) : self::DEFAULT_WIDTH;
+		$instance['align'] = ( ! empty( $new_instance['align'] ) ) ? strip_tags( $new_instance['align'] ) : TUXQUOTE_DEFAULT_ALIGN;
 
 		return $instance;
 	}
