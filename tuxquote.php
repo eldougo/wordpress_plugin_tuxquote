@@ -3,7 +3,7 @@
  * Plugin Name: Tuxquote
  * Plugin URI: https://github.com/eldougo/wordpress_plugin_tuxquote
  * Description: Show a random image of Tux the Linux penguin with a random quote.
- * Version: 1.2
+ * Version: 1.3
  * Author: Craig Douglas
  * Author URI: https://github.com/eldougo
  * License: GPL2
