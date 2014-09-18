@@ -72,7 +72,7 @@ function tuxquote_choose_image() {
 	}
 	return  "\n<div style='float: right; width: ".$div_width."; '>\n"
 			.$title_line
-			."  <img style='width:100%' src='".tuxquote_choose_image()."'><br />\n"
+			."  <img src='".tuxquote_choose_image()."'><br />\n"
 			."  <p style='text-align: center'>".tuxquote_choose_quote()."</p>\n"
 			."</div>\n";
  }
