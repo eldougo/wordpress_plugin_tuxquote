@@ -34,9 +34,9 @@ Parameters:
 
 [TUXQUOTE title="title_text" width="container_width" align="container_alignment"]
 
-title:     Add title text above the image. Eg: title="Listen to the Penguin"
-width:     Div container width in percentage or pixels. Eg: width="80%" or width="200px"
-align:     How to align among the surrounding elements on the page. Can be "left", "right", "none". Eg: align="left"
+* title:     Add title text above the image. Eg: title="Listen to the Penguin"  
+* width:     Div container width in percentage or pixels. Eg: width="80%" or width="200px"  
+* align:     How to align among the surrounding elements on the page. Can be "left", "right", "none". Eg: align="left"  
 
 = Shortcode examples =
 
