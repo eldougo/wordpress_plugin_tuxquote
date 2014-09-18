@@ -1,7 +1,7 @@
 === Tuxquote ===
 Contributors: eldougo
 Donate link: 
-Tags: quote, tux
+Tags: quote, tux, motd,random
 Requires at least: 3.0.1
 Tested up to: 4.0
 Stable tag: 1.3
@@ -23,6 +23,16 @@ Development for this plugin can be found on GitHub: https://github.com/eldougo/w
 The supplied images were sourced from CrystalXP.net (http://www.crystalxp.net/) and are all distributed under the Creative Commons BY-NC-SA license (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 
 Please see images-license.txt for image licensing information and image attributions.
+
+See the Installation section for usage instructions.
+
+== Installation ==
+
+You can download and install Tuxquote using the built in WordPress plugin installer. If you download Tuxquote manually, make sure it is uploaded to "/wp-content/plugins/Tuxquote/".
+
+Activate Tuxquote in the "Plugins" admin panel using the "Activate" link.
+
+You can either enter the shortcode '[TUXQUOTE]' in your page or post and/or drag the Tuxquote Widget to a widgitized area on your Widgets page.
 
 = Shortcode usage =
 
@@ -52,9 +62,15 @@ Set the alignment to the left allowing surrounding text to flow down the right o
 
 [TUXQUOTE align="left"]
 
-== Installation ==
+= Widget usage =
 
-1. Upload the Tuxquote plugin to your blog, activate it, then either enter the shortcode '[TUXQUOTE]' in your page or post and/or drag the Tuxquote Widget to a widgitized area on your Widgets page.
+Drag the Tuxquote Widget to a widgitized area on your Widgets page (Apperance -> Widgets).
+
+Click the Tuxquote widget and enter the following options as required:
+
+* title:     Add title text above the Tuxquote image.  
+* width:     Div container width in percentage or pixels. Eg: 80% or 200px.   
+* align:     Can be "left", "right", "none". Eg: align="left". Doesn't have much of an affect in a wigetized area.  
 
 == Frequently Asked Questions ==
 
